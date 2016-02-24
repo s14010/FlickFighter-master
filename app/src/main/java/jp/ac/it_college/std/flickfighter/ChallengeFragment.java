@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Gallery;
 import android.widget.ImageSwitcher;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.ViewSwitcher;
 
 public class ChallengeFragment extends Fragment
@@ -27,6 +28,9 @@ public class ChallengeFragment extends Fragment
     private SharedPreferences.Editor editor;
 
     private int stageId;
+    private TextView text;
+
+
     public static final String PREF_POINT = "point";
     //規定時間
     public static final long STIPULATED_TIME = 180 * 1000;
@@ -72,6 +76,18 @@ public class ChallengeFragment extends Fragment
         challenge2.setFactory(this);
         challenge3 = (ImageSwitcher) view.findViewById(R.id.challenge_clear3);
         challenge3.setFactory(this);
+        text = (TextView)view.findViewById(R.id.challenge4);
+
+
+        if(stageId == 1){
+            text.setText("MONEY:10");
+        }else if(stageId == 2){
+            text.setText("MONEY:30");
+        }else if(stageId == 3){
+            text.setText("MONEY:50");
+        }else {
+        }
+
 
         checkChallenge();
         return view;

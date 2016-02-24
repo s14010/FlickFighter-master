@@ -745,6 +745,18 @@ public class BattleActivity extends Activity
                     bossSummon();
                 } else {
                     //ゲームクリア時の処理
+
+                    SharedPreferences playerStatus = getSharedPreferences("status", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = playerStatus.edit();
+                    if(stageId == 1){
+                        editor.putInt(POINT, playerStatus.getInt(POINT, 0) + 10);
+                    }else if(stageId == 2){
+                        editor.putInt(POINT, playerStatus.getInt(POINT, 0) + 30);
+                    }else if(stageId == 3){
+                        editor.putInt(POINT, playerStatus.getInt(POINT, 0) + 50);
+                    }else {
+                    }
+                    editor.apply();
                     gameEnd(true);
                     return;
                 }
