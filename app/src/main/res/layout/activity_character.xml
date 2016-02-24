@@ -11,6 +11,7 @@
 
 
     <HorizontalScrollView
+        android:id="@+id/scroll"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
 
@@ -60,8 +61,57 @@
                 android:src="@drawable/f101"
                 android:text="はひふへほ" />
 
+            <ImageButton
+                android:id="@+id/character7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/f102"
+                android:text="あいうえお" />
+
+            <ImageButton
+                android:id="@+id/character8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/f103"
+                android:text="かきくけこ" />
+
+            <ImageButton
+                android:id="@+id/character9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/f104"
+                android:text="さしすせそ" />
+
+            <ImageButton
+                android:id="@+id/character10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/f105"
+                android:text="たちすてと" />
+
+            <ImageButton
+                android:id="@+id/character11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/f301"
+                android:text="なにぬねの" />
+
+            <ImageButton
+                android:id="@+id/character12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/f302"
+                android:text="はひふへほ" />
+
         </LinearLayout>
 
     </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/scroll"
+        android:textSize="60dp" />
 
 </RelativeLayout>

@@ -129,7 +129,7 @@ public class BattleActivity extends Activity
 
         stageId = getIntent().getExtras().getInt(StageSelectFragment.STAGE_ID);
         SharedPreferences playerStatus = getSharedPreferences("status", MODE_PRIVATE);
-        playerPow = playerStatus.getInt("attackLevel", 20);
+        playerPow = playerStatus.getInt("attackLevel", 50);
         playerDefence = playerStatus.getInt("defenceLevel", 10);
         playerLife = playerStatus.getInt("lifeLevel", 100);
 

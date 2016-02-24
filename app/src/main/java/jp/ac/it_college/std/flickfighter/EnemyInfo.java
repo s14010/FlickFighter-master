@@ -63,21 +63,21 @@ public class EnemyInfo {
 
     public static int enemyLifeSetting(int i) {
         int[] enemyLife = {
-                30, 30, 30, 40, 40, 40, 50, 50, 50, 60, 60, 60
+                50, 50, 80, 40, 40, 40, 50, 50, 50, 60, 60, 60
         };
         return enemyLife[i];
     }
 
     public static int enemyPowSetting(int i) {
         int[] enemyPow = {
-                20, 20, 20, 20, 30, 30, 30, 30, 40, 40, 40, 50
+                20, 20, 30, 20, 30, 30, 30, 30, 40, 40, 40, 50
         };
         return enemyPow[i];
     }
 
     public static int bossLifeSetting(int i) {
         int[] bossLife = {
-                50, 50, 60, 70, 70, 80, 90, 100, 100, 150
+                100, 150, 200, 70, 70, 80, 90, 100, 100, 150
         };
         return bossLife[i];
     }
