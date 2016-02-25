@@ -98,10 +98,10 @@ public class StatusFragment extends Fragment implements View.OnClickListener {
 
     private void statusDisplay(){
         ((TextView)rootView.findViewById(R.id.status_attack_level))
-                .setText(String.valueOf(playerStatus.getInt(ATTACK, 1)));
+                .setText(String.valueOf(playerStatus.getInt(ATTACK, 50)));
         ((TextView)rootView.findViewById(R.id.status_defence_level))
                 .setText(String.valueOf(playerStatus.getInt(DEFENCE, 0)));
         ((TextView)rootView.findViewById(R.id.status_life_level))
-                .setText(String.valueOf(playerStatus.getInt(LIFE, 5)));
+                .setText(String.valueOf(playerStatus.getInt(LIFE, 100)));
     }
 }

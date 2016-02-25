@@ -130,7 +130,7 @@ public class BattleActivity extends Activity
         stageId = getIntent().getExtras().getInt(StageSelectFragment.STAGE_ID);
         SharedPreferences playerStatus = getSharedPreferences("status", MODE_PRIVATE);
         playerPow = playerStatus.getInt("attackLevel", 50);
-        playerDefence = playerStatus.getInt("defenceLevel", 10);
+        playerDefence = playerStatus.getInt("defenceLevel", 0);
         playerLife = playerStatus.getInt("lifeLevel", 100);
 
         //プレイヤーの体力ゲージ表示
