@@ -452,10 +452,6 @@ public class BattleActivity extends Activity
                     se.play(gameClearSoundId, 1.0f, 1.0f, 0, 0, 1.0f);
                     messageTextView.setTextColor(Color.YELLOW);
                     messageTextView.setText("CLEAR!");
-                    SharedPreferences playerStatus = getSharedPreferences("status", MODE_PRIVATE);
-                    SharedPreferences.Editor editor = playerStatus.edit();
-                    editor.putInt(POINT, playerStatus.getInt(POINT, 0) + 10);
-                    editor.apply();
                 } else {
                     se.play(gameOverSoundId, 1.0f, 1.0f, 0, 0, 1.0f);
                     messageTextView.setTextColor(Color.GRAY);
@@ -650,11 +646,33 @@ public class BattleActivity extends Activity
                     //プレイヤー側の攻撃処理
 
                     if(timeB / timeA > 1) {
+                        final TextView textView = (TextView) findViewById(R.id.kougeki);
                         enemyLifeGauge.setProgress(enemyLife -= playerPow * (timeB / timeA));
-                        battleCountView.setText(String.valueOf(playerPow * (timeB / timeA)));
+                        textView.setText(String.valueOf(Math.round(playerPow * (timeB / timeA))));
+                        //付け足し
+                        final Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                //ここにかく
+                                textView.setText("");
+                                //AverageTime();
+                            }
+                        }, 1000);
                     } else {
+                        final TextView textView = (TextView) findViewById(R.id.kougeki);
                         enemyLifeGauge.setProgress(enemyLife -= playerPow);
-                        battleCountView.setText(String.valueOf(playerPow));
+                        textView.setText(String.valueOf(playerPow));
+                        //付け足し
+                        final Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                //ここにかく
+                                textView.setText("");
+                                //AverageTime();
+                            }
+                        }, 1000);
                     }
 
 
@@ -749,11 +767,11 @@ public class BattleActivity extends Activity
                     SharedPreferences playerStatus = getSharedPreferences("status", MODE_PRIVATE);
                     SharedPreferences.Editor editor = playerStatus.edit();
                     if(stageId == 1){
-                        editor.putInt(POINT, playerStatus.getInt(POINT, 0) + 10);
+                        editor.putInt(POINT, playerStatus.getInt(POINT, 0) + 100);
                     }else if(stageId == 2){
-                        editor.putInt(POINT, playerStatus.getInt(POINT, 0) + 30);
+                        editor.putInt(POINT, playerStatus.getInt(POINT, 0) + 200);
                     }else if(stageId == 3){
-                        editor.putInt(POINT, playerStatus.getInt(POINT, 0) + 50);
+                        editor.putInt(POINT, playerStatus.getInt(POINT, 0) + 300);
                     }else {
                     }
                     editor.apply();

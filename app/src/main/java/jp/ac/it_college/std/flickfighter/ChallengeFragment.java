@@ -61,7 +61,7 @@ public class ChallengeFragment extends Fragment
         if (getArguments() != null) {
             mChallenge1 = getArguments().getLong(CHALLENGE_CLEAR_WITHIN_3MIN) < STIPULATED_TIME;
             mChallenge2 = getArguments().getBoolean(CHALLENGE_CLEAR_NO_DAMAGE);
-            mChallenge3 = getArguments().getBoolean(CHALLENGE_CLEAR_RARE_CRUSHING);
+
         }
     }
 
@@ -74,18 +74,22 @@ public class ChallengeFragment extends Fragment
         challenge1.setFactory(this);
         challenge2 = (ImageSwitcher) view.findViewById(R.id.challenge_clear2);
         challenge2.setFactory(this);
-        challenge3 = (ImageSwitcher) view.findViewById(R.id.challenge_clear3);
-        challenge3.setFactory(this);
-        text = (TextView)view.findViewById(R.id.challenge4);
 
 
-        if(stageId == 1){
-            text.setText("MONEY:10");
-        }else if(stageId == 2){
-            text.setText("MONEY:30");
-        }else if(stageId == 3){
-            text.setText("MONEY:50");
-        }else {
+        ImageView imageView1 = (ImageView) view.findViewById(R.id.imageView);
+        imageView1.setImageResource(R.drawable.kane);
+
+        text = (TextView) view.findViewById(R.id.okane);
+        if (stageId == 1) {
+            text.setText("100コインGET");
+            //text.setTextSize(50.0f);
+        } else if (stageId == 2) {
+            text.setText("200コインGET");
+            //text.setTextSize(20.0f);
+        } else if (stageId == 3) {
+            text.setText("300コインGET");
+            //text.setTextSize(30.0f);
+        } else {
         }
 
 
@@ -98,8 +102,7 @@ public class ChallengeFragment extends Fragment
             challenge1.setImageResource(img[2]);
             if (!playerStatus.getBoolean(stageId + BattleActivity.PREF_CLEAR_TIME, false)) {
                 challenge1.setImageResource(img[0]);
-                editor.putInt(PREF_POINT, playerStatus.getInt(PREF_POINT, 0) + 1)
-                        .putBoolean(stageId + BattleActivity.PREF_CLEAR_TIME, true)
+                editor.putBoolean(stageId + BattleActivity.PREF_CLEAR_TIME, true)
                         .apply();
             }
         } else {
@@ -110,24 +113,11 @@ public class ChallengeFragment extends Fragment
             challenge2.setImageResource(img[2]);
             if(!playerStatus.getBoolean(stageId + BattleActivity.PREF_NO_DAMAGE, false)) {
                 challenge2.setImageResource(img[0]);
-                editor.putInt(PREF_POINT, playerStatus.getInt(PREF_POINT, 0) + 1)
-                        .putBoolean(stageId + BattleActivity.PREF_NO_DAMAGE, true)
+                editor.putBoolean(stageId + BattleActivity.PREF_NO_DAMAGE, true)
                         .apply();
             }
         } else {
             challenge2.setImageResource(img[1]);
-        }
-
-        if (mChallenge3) {
-            challenge3.setImageResource(img[2]);
-            if (!playerStatus.getBoolean(stageId + BattleActivity.PREF_RARE_CRUSHING, false)) {
-                challenge3.setImageResource(img[0]);
-                editor.putInt(PREF_POINT, playerStatus.getInt(PREF_POINT, 0) + 1)
-                        .putBoolean(stageId + BattleActivity.PREF_RARE_CRUSHING, true)
-                        .apply();
-            }
-        } else {
-            challenge3.setImageResource(img[1]);
         }
 
     }
