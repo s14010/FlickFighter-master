@@ -14,9 +14,11 @@ import android.widget.TextView;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -85,24 +87,17 @@ public class Gatya extends Activity implements View.OnClickListener{
                     gatyaImage.setImageResource(gatyaPath[i]);
 
 
-                    String s = String.valueOf(i);
-                    String line[] = {"123"};
+                    OutputStream out;
+                    try {
+                        out = openFileOutput("test.txt",MODE_PRIVATE|MODE_APPEND);
+                        PrintWriter writer = new PrintWriter(new OutputStreamWriter(out,"UTF-8"));
 
-                    try{
-                        InputStream in = openFileInput("a.txt");
-                        BufferedReader reader =
-                        new BufferedReader(new InputStreamReader(in,"UTF-8"));
-
-
-                        while((s = reader.readLine())!= null){
-                            line = s.split(",");
-
-                            }
-                        reader.close();
-                    }catch(IOException e){
+                        writer.append(String.valueOf(i) + ",");
+                        writer.close();
+                    } catch (IOException e) {
+                        // TODO 自動生成された catch ブロック
                         e.printStackTrace();
                     }
-
 
 
                 } else {
@@ -123,6 +118,7 @@ public class Gatya extends Activity implements View.OnClickListener{
 
 
     }
+
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
