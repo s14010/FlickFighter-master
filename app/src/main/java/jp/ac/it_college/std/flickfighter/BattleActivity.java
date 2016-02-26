@@ -155,8 +155,6 @@ public class BattleActivity extends Activity
         //敵キャラ表示
         enemyLifeGauge = (ProgressBar) findViewById(R.id.enemy_life_gauge);
         enemyImage = (ImageView) findViewById(R.id.enemy_image);
-        timerText = (TextView)findViewById(R.id.timer_label);
-        timerText.setText("00.0");
         enemyStringView();
         enemySummon();
 
@@ -310,9 +308,9 @@ public class BattleActivity extends Activity
                         messageTextView.setVisibility(View.INVISIBLE);
 
                         // タイマーをセット
-                        timer = new Timer();
-                        timerTask = new Task1();
-                        timer.scheduleAtFixedRate(timerTask, 0, 100);
+                      //  timer = new Timer();
+                      //  timerTask = new Task1();
+                      //  timer.scheduleAtFixedRate(timerTask, 0, 100);
                         gameStart();
                     }
                 }, 500);
@@ -500,7 +498,6 @@ public class BattleActivity extends Activity
 
         // カウンター
         count = 0;
-        timerText.setText("00.0");
 
         timer.schedule(new TimerTask() {
             @Override
@@ -512,7 +509,6 @@ public class BattleActivity extends Activity
                         long mm = count * 100 / 1000 / 60;
                         long ss = count * 100 / 1000 % 60;
                         long ms = (count * 100 - ss * 1000 - mm * 1000 * 60) / 100;
-                        timerText.setText(String.format("%1$02d.%2$01d", ss, ms));
                         time1 = String.valueOf(ss + "." + ms);
                     }
                 });
@@ -854,6 +850,7 @@ public class BattleActivity extends Activity
         layoutParams.setMargins(0, marginHeight - playerLifeGauge.getHeight(), 0, 0);
     }
 
+    /*
     public class Task1 extends TimerTask {
 
         private Handler handler;
@@ -863,6 +860,7 @@ public class BattleActivity extends Activity
             handler = new Handler();
             startTime = System.currentTimeMillis();
         }
+
 
         @Override
         public void run() {
@@ -876,5 +874,6 @@ public class BattleActivity extends Activity
                 }
             });
         }
-    }
+
+    }   */
 }

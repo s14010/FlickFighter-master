@@ -63,7 +63,7 @@ public class EnemyInfo {
 
     public static int enemyLifeSetting(int i) {
         int[] enemyLife = {
-                50, 50, 80, 40, 40, 40, 50, 50, 50, 60, 60, 60
+                60, 100, 150, 40, 40, 40, 50, 50, 50, 60, 60, 60
         };
         return enemyLife[i];
     }
@@ -77,7 +77,7 @@ public class EnemyInfo {
 
     public static int bossLifeSetting(int i) {
         int[] bossLife = {
-                100, 150, 200, 70, 70, 80, 90, 100, 100, 150
+                150, 350, 550, 70, 70, 80, 90, 100, 100, 150
         };
         return bossLife[i];
     }
