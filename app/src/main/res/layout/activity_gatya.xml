@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/text"
         android:text=""
-        android:textSize="60sp"/>
+        android:textSize="60dp"/>
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:text="1回500コイン"
         android:id="@+id/textView"
-        android:textSize="50sp"
+        android:textSize="50dp"
         android:layout_above="@+id/button"
         android:layout_centerHorizontal="true" />
 
@@ -48,14 +48,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=""
-        android:textSize="50sp"
+        android:textSize="50dp"
         android:id="@+id/text1"
         android:layout_above="@+id/textView"
         android:layout_centerHorizontal="true" />
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:id="@+id/imageView"
         android:layout_above="@+id/textView"
         android:layout_toLeftOf="@+id/text1"

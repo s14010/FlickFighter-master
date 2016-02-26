@@ -32,6 +32,7 @@ public class Character extends Activity implements View.OnClickListener{
 
     private static final String ATTACK = "attackLevel";
     private static final String LIFE = "lifeLevel";
+    private static final String CHARACTER = "character";
     private String[] array;
     private InputStream in;
     private String lineBuffer;
@@ -110,9 +111,11 @@ public class Character extends Activity implements View.OnClickListener{
                                     SharedPreferences.Editor editor = playerStatus.edit();
                                     editor.remove(ATTACK);
                                     editor.remove(LIFE);
+                                    editor.remove(CHARACTER);
                                     editor.apply();
                                     editor.putInt(ATTACK, playerStatus.getInt(ATTACK, 150))
                                             .putInt(LIFE, playerStatus.getInt(LIFE, 100))
+                                            .putInt(CHARACTER, playerStatus.getInt(CHARACTER, R.drawable.f001))
                                             .apply();
                                 } else {
                                     textView.setText("このキャラクターを保持していません。");
@@ -161,9 +164,11 @@ public class Character extends Activity implements View.OnClickListener{
                                     SharedPreferences.Editor editor = playerStatus.edit();
                                     editor.remove(ATTACK);
                                     editor.remove(LIFE);
+                                    editor.remove(CHARACTER);
                                     editor.apply();
                                     editor.putInt(ATTACK, playerStatus.getInt(ATTACK, 130))
                                             .putInt(LIFE, playerStatus.getInt(LIFE, 130))
+                                            .putInt(CHARACTER, playerStatus.getInt(CHARACTER, R.drawable.f002))
                                             .apply();
                                 } else {
                                     textView.setText("このキャラクターを保持していません。");
@@ -210,9 +215,11 @@ public class Character extends Activity implements View.OnClickListener{
                                     SharedPreferences.Editor editor = playerStatus.edit();
                                     editor.remove(ATTACK);
                                     editor.remove(LIFE);
+                                    editor.remove(CHARACTER);
                                     editor.apply();
                                     editor.putInt(ATTACK, playerStatus.getInt(ATTACK, 150))
                                             .putInt(LIFE, playerStatus.getInt(LIFE, 180))
+                                            .putInt(CHARACTER, playerStatus.getInt(CHARACTER, R.drawable.f003))
                                             .apply();
                                 } else {
                                     textView.setText("このキャラクターを保持していません。");
@@ -259,10 +266,13 @@ public class Character extends Activity implements View.OnClickListener{
 
                                     textView.setText("攻撃力: " + Gatya.AttackPath[3] + " HP :" + Gatya.HpPath[3]);
                                     SharedPreferences.Editor editor = playerStatus.edit();
-                                    editor.remove(ATTACK);editor.remove(LIFE);
+                                    editor.remove(ATTACK);
+                                    editor.remove(LIFE);
+                                    editor.remove(CHARACTER);
                                     editor.apply();
                                     editor.putInt(ATTACK, playerStatus.getInt(ATTACK, 150))
                                             .putInt(LIFE, playerStatus.getInt(LIFE, 140))
+                                            .putInt(CHARACTER, playerStatus.getInt(CHARACTER, R.drawable.f004))
                                             .apply();
                                 } else {
                                     textView.setText("このキャラクターを保持していません。");
@@ -311,9 +321,11 @@ public class Character extends Activity implements View.OnClickListener{
                                     SharedPreferences.Editor editor = playerStatus.edit();
                                     editor.remove(ATTACK);
                                     editor.remove(LIFE);
+                                    editor.remove(CHARACTER);
                                     editor.apply();
                                     editor.putInt(ATTACK, playerStatus.getInt(ATTACK, 200))
                                             .putInt(LIFE, playerStatus.getInt(LIFE, 200))
+                                            .putInt(CHARACTER, playerStatus.getInt(CHARACTER, R.drawable.f005))
                                             .apply();
                                 } else {
                                     textView.setText("このキャラクターを保持していません。");
@@ -361,9 +373,11 @@ public class Character extends Activity implements View.OnClickListener{
                                     SharedPreferences.Editor editor = playerStatus.edit();
                                     editor.remove(ATTACK);
                                     editor.remove(LIFE);
+                                    editor.remove(CHARACTER);
                                     editor.apply();
                                     editor.putInt(ATTACK, playerStatus.getInt(ATTACK, 120))
                                             .putInt(LIFE, playerStatus.getInt(LIFE, 120))
+                                            .putInt(CHARACTER, playerStatus.getInt(CHARACTER, R.drawable.f101))
                                             .apply();
                                 } else {
                                     textView.setText("このキャラクターを保持していません。");
@@ -411,9 +425,11 @@ public class Character extends Activity implements View.OnClickListener{
                                     SharedPreferences.Editor editor = playerStatus.edit();
                                     editor.remove(ATTACK);
                                     editor.remove(LIFE);
+                                    editor.remove(CHARACTER);
                                     editor.apply();
                                     editor.putInt(ATTACK, playerStatus.getInt(ATTACK, 150))
                                             .putInt(LIFE, playerStatus.getInt(LIFE, 130))
+                                            .putInt(CHARACTER, playerStatus.getInt(CHARACTER, R.drawable.f102))
                                             .apply();
                                 } else {
                                     textView.setText("このキャラクターを保持していません。");
@@ -461,9 +477,11 @@ public class Character extends Activity implements View.OnClickListener{
                                     SharedPreferences.Editor editor = playerStatus.edit();
                                     editor.remove(ATTACK);
                                     editor.remove(LIFE);
+                                    editor.remove(CHARACTER);
                                     editor.apply();
                                     editor.putInt(ATTACK, playerStatus.getInt(ATTACK, 170))
                                             .putInt(LIFE, playerStatus.getInt(LIFE, 170))
+                                            .putInt(CHARACTER, playerStatus.getInt(CHARACTER, R.drawable.f103))
                                             .apply();
                                 } else {
                                     textView.setText("このキャラクターを保持していません。");
@@ -511,9 +529,11 @@ public class Character extends Activity implements View.OnClickListener{
                                     SharedPreferences.Editor editor = playerStatus.edit();
                                     editor.remove(ATTACK);
                                     editor.remove(LIFE);
+                                    editor.remove(CHARACTER);
                                     editor.apply();
                                     editor.putInt(ATTACK, playerStatus.getInt(ATTACK, 170))
                                             .putInt(LIFE, playerStatus.getInt(LIFE, 150))
+                                            .putInt(CHARACTER, playerStatus.getInt(CHARACTER, R.drawable.f104))
                                             .apply();
                                 } else {
                                     textView.setText("このキャラクターを保持していません。");
@@ -561,9 +581,11 @@ public class Character extends Activity implements View.OnClickListener{
                                     SharedPreferences.Editor editor = playerStatus.edit();
                                     editor.remove(ATTACK);
                                     editor.remove(LIFE);
+                                    editor.remove(CHARACTER);
                                     editor.apply();
                                     editor.putInt(ATTACK, playerStatus.getInt(ATTACK, 250))
                                             .putInt(LIFE, playerStatus.getInt(LIFE, 200))
+                                            .putInt(CHARACTER, playerStatus.getInt(CHARACTER, R.drawable.f105))
                                             .apply();
                                 } else {
                                     textView.setText("このキャラクターを保持していません。");
@@ -612,9 +634,11 @@ public class Character extends Activity implements View.OnClickListener{
                                     SharedPreferences.Editor editor = playerStatus.edit();
                                     editor.remove(ATTACK);
                                     editor.remove(LIFE);
+                                    editor.remove(CHARACTER);
                                     editor.apply();
                                     editor.putInt(ATTACK, playerStatus.getInt(ATTACK, 110))
                                             .putInt(LIFE, playerStatus.getInt(LIFE, 100))
+                                            .putInt(CHARACTER, playerStatus.getInt(CHARACTER, R.drawable.f301))
                                             .apply();
                                 } else {
                                     textView.setText("このキャラクターを保持していません。");
@@ -664,9 +688,11 @@ public class Character extends Activity implements View.OnClickListener{
                                     SharedPreferences.Editor editor = playerStatus.edit();
                                     editor.remove(ATTACK);
                                     editor.remove(LIFE);
+                                    editor.remove(CHARACTER);
                                     editor.apply();
                                     editor.putInt(ATTACK, playerStatus.getInt(ATTACK, 100))
                                             .putInt(LIFE, playerStatus.getInt(LIFE, 120))
+                                            .putInt(CHARACTER, playerStatus.getInt(CHARACTER, R.drawable.f302))
                                             .apply();
                                 } else {
                                     textView.setText("このキャラクターを保持していません。");

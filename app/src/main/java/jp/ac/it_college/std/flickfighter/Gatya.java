@@ -70,9 +70,9 @@ public class Gatya extends Activity implements View.OnClickListener{
         switch (view.getId()) {
             case R.id.button:
 
-                if (5 <= playerStatus.getInt(POINT, 0)) {
+                if (500 <= playerStatus.getInt(POINT, 0)) {
                     SharedPreferences.Editor editor = playerStatus.edit();
-                    editor.putInt(POINT, playerStatus.getInt(POINT, 0) - 1000)
+                    editor.putInt(POINT, playerStatus.getInt(POINT, 0) - 500)
                             .apply();
                     pointView.setText(String.valueOf(playerStatus.getInt(POINT, 0)));
 
