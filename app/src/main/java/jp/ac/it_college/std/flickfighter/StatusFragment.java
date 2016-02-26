@@ -45,6 +45,7 @@ public class StatusFragment extends Fragment implements View.OnClickListener {
         rootView.findViewById(R.id.button_stage_select).setOnClickListener(this);
         rootView.findViewById(R.id.button_gatya).setOnClickListener(this);
         rootView.findViewById(R.id.button_character).setOnClickListener(this);
+        rootView.findViewById(R.id.button2).setOnClickListener(this);
 
         playerStatus = getActivity().getSharedPreferences("status", Context.MODE_PRIVATE);
 
@@ -81,6 +82,16 @@ public class StatusFragment extends Fragment implements View.OnClickListener {
                 Intent intent2 = new Intent(getActivity(), Character.class);
                 startActivity(intent2);
                 break;
+            case R.id.button2:
+                if (100 <= playerStatus.getInt(POINT, 0)) {
+
+                    SharedPreferences.Editor editor = playerStatus.edit();
+                    editor.putInt(POINT, playerStatus.getInt(POINT, 0) - 100)
+                            .apply();
+                    pointView.setText(String.valueOf(playerStatus.getInt(POINT, 0)));
+                }else {
+
+                }
         }
 
     }
