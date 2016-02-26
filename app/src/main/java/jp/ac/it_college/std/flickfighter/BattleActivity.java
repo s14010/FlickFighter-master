@@ -449,10 +449,12 @@ public class BattleActivity extends Activity
             public void run() {
 
                 if (isGameClear) {
+                    stoptimer();
                     se.play(gameClearSoundId, 1.0f, 1.0f, 0, 0, 1.0f);
                     messageTextView.setTextColor(Color.YELLOW);
                     messageTextView.setText("CLEAR!");
                 } else {
+                    stoptimer();
                     se.play(gameOverSoundId, 1.0f, 1.0f, 0, 0, 1.0f);
                     messageTextView.setTextColor(Color.GRAY);
                     messageTextView.setText("GAME OVER");
@@ -527,21 +529,6 @@ public class BattleActivity extends Activity
         }
     }
 
-    /*
-    public void enemyStringView() {
-
-        if (battleCount == maxBattleCount) {
-            text = EnemyInfo.bossWordView(stageId);
-            enemyString.setText(text);
-            AverageTime();
-        } else {
-            //敵の文字列を表示
-            text = EnemyInfo.randomWordView(stageId);
-            enemyString.setText(text);
-            AverageTime();
-        }
-    }
-    */
 
     public void enemySummon() {
         battleCount++;
@@ -634,14 +621,12 @@ public class BattleActivity extends Activity
 
                     stoptimer();
 
-                    //* 平均タイプによる攻撃力変換
+                    // 平均タイプによる攻撃力変換
 
                     Double timeA = Double.parseDouble(time1);
                     Double timeB = Double.parseDouble(String.valueOf(s.length()));
 
-                    // battleCountView.setText(String.valueOf(String.format("%.2f" ,timeB / timeA)));
 
-                    //*/
 
                     //プレイヤー側の攻撃処理
 
@@ -656,7 +641,7 @@ public class BattleActivity extends Activity
                             public void run() {
                                 //ここにかく
                                 textView.setText("");
-                                //AverageTime();
+
                             }
                         }, 1000);
                     } else {
@@ -670,7 +655,7 @@ public class BattleActivity extends Activity
                             public void run() {
                                 //ここにかく
                                 textView.setText("");
-                                //AverageTime();
+
                             }
                         }, 1000);
                     }
