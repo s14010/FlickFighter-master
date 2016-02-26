@@ -102,15 +102,19 @@ public class Character extends Activity implements View.OnClickListener{
 
                                 List<String> list =Arrays.asList(array);
                                 if(list.contains("0")) {
+                                    int l = 0;
+                                    l = playerStatus.getInt("level", 0);
+                                    int goukei = Gatya.AttackPath[0] + (l * 10);
+                                    int goukei2 = Gatya.HpPath[0] + (l * 10);
 
-                                    textView.setText("攻撃力: " + Gatya.AttackPath[0] + " HP :" + Gatya.HpPath[0]);
+                                    textView.setText("攻撃力: " + goukei + " HP :" + goukei2);
                                     SharedPreferences.Editor editor = playerStatus.edit();
                                     editor.remove(ATTACK);
                                     editor.remove(LIFE);
                                     editor.remove(CHARACTER);
                                     editor.apply();
-                                    editor.putInt(ATTACK, playerStatus.getInt(ATTACK, 150))
-                                            .putInt(LIFE, playerStatus.getInt(LIFE, 100))
+                                    editor.putInt(ATTACK, playerStatus.getInt(ATTACK, 150) + (l*10))
+                                            .putInt(LIFE, playerStatus.getInt(LIFE, 100) + (l*10))
                                             .putInt(CHARACTER, playerStatus.getInt(CHARACTER, R.drawable.f001))
                                             .apply();
                                 } else {
@@ -156,15 +160,19 @@ public class Character extends Activity implements View.OnClickListener{
 
                                 List<String> list =Arrays.asList(array);
                                 if(list.contains("1")) {
-                                    textView.setText("攻撃力: " + Gatya.AttackPath[1] + " HP :" + Gatya.HpPath[1]);
+                                    int l = 0;
+                                    l = playerStatus.getInt("level1", 0);
+                                    int goukei = Gatya.AttackPath[0] + (l *10);
+                                    int goukei2 = Gatya.HpPath[0] + (l *10);
+                                    textView.setText("攻撃力: " + goukei + " HP :" + goukei2);
                                     SharedPreferences.Editor editor = playerStatus.edit();
                                     editor.remove(ATTACK);
                                     editor.remove(LIFE);
                                     editor.remove(CHARACTER);
                                     editor.apply();
-                                    editor.putInt(ATTACK, playerStatus.getInt(ATTACK, 130))
-                                            .putInt(LIFE, playerStatus.getInt(LIFE, 130))
-                                            .putInt(CHARACTER, playerStatus.getInt(CHARACTER, R.drawable.f002))
+                                    editor.putInt(ATTACK, playerStatus.getInt(ATTACK, 150 + (l*10)))
+                                            .putInt(LIFE, playerStatus.getInt(LIFE, 100 + (l*10)))
+                                            .putInt(CHARACTER, playerStatus.getInt(CHARACTER, R.drawable.f001))
                                             .apply();
                                 } else {
                                     textView.setText("このキャラクターを保持していません。");
@@ -207,14 +215,18 @@ public class Character extends Activity implements View.OnClickListener{
                                 List<String> list =Arrays.asList(array);
                                 if(list.contains("2")) {
 
-                                    textView.setText("攻撃力: " + Gatya.AttackPath[2] + " HP :" + Gatya.HpPath[2]);
-                                    SharedPreferences.Editor editor = playerStatus.edit();
+                                    int l = 0;
+                                    l = playerStatus.getInt("level", 0);
+                                    int goukei = Gatya.AttackPath[2] + (l * 10);
+                                    int goukei2 = Gatya.HpPath[2] + (l * 10);
+
+                                    textView.setText("攻撃力: " + goukei + " HP :" + goukei2);                                    SharedPreferences.Editor editor = playerStatus.edit();
                                     editor.remove(ATTACK);
                                     editor.remove(LIFE);
                                     editor.remove(CHARACTER);
                                     editor.apply();
-                                    editor.putInt(ATTACK, playerStatus.getInt(ATTACK, 150))
-                                            .putInt(LIFE, playerStatus.getInt(LIFE, 180))
+                                    editor.putInt(ATTACK, playerStatus.getInt(ATTACK, 150 + (l*10)))
+                                            .putInt(LIFE, playerStatus.getInt(LIFE, 180 + (l*10)))
                                             .putInt(CHARACTER, playerStatus.getInt(CHARACTER, R.drawable.f003))
                                             .apply();
                                 } else {
@@ -260,14 +272,18 @@ public class Character extends Activity implements View.OnClickListener{
                                 List<String> list =Arrays.asList(array);
                                 if(list.contains("3")) {
 
-                                    textView.setText("攻撃力: " + Gatya.AttackPath[3] + " HP :" + Gatya.HpPath[3]);
-                                    SharedPreferences.Editor editor = playerStatus.edit();
+                                    int l = 0;
+                                    l = playerStatus.getInt("level", 0);
+                                    int goukei = Gatya.AttackPath[3] + (l * 10);
+                                    int goukei2 = Gatya.HpPath[3] + (l * 10);
+
+                                    textView.setText("攻撃力: " + goukei + " HP :" + goukei2);                                    SharedPreferences.Editor editor = playerStatus.edit();
                                     editor.remove(ATTACK);
                                     editor.remove(LIFE);
                                     editor.remove(CHARACTER);
                                     editor.apply();
-                                    editor.putInt(ATTACK, playerStatus.getInt(ATTACK, 150))
-                                            .putInt(LIFE, playerStatus.getInt(LIFE, 140))
+                                    editor.putInt(ATTACK, playerStatus.getInt(ATTACK, 150 +(l*10)))
+                                            .putInt(LIFE, playerStatus.getInt(LIFE, 140 +(l*10)))
                                             .putInt(CHARACTER, playerStatus.getInt(CHARACTER, R.drawable.f004))
                                             .apply();
                                 } else {
@@ -313,14 +329,19 @@ public class Character extends Activity implements View.OnClickListener{
                                 List<String> list =Arrays.asList(array);
                                 if(list.contains("4")) {
 
-                                    textView.setText("攻撃力: " + Gatya.AttackPath[4] + " HP :" + Gatya.HpPath[4]);
+                                    int l = 0;
+                                    l = playerStatus.getInt("level", 0);
+                                    int goukei = Gatya.AttackPath[4] + (l * 10);
+                                    int goukei2 = Gatya.HpPath[4] + (l * 10);
+
+                                    textView.setText("攻撃力: " + goukei + " HP :" + goukei2);
                                     SharedPreferences.Editor editor = playerStatus.edit();
                                     editor.remove(ATTACK);
                                     editor.remove(LIFE);
                                     editor.remove(CHARACTER);
                                     editor.apply();
-                                    editor.putInt(ATTACK, playerStatus.getInt(ATTACK, 200))
-                                            .putInt(LIFE, playerStatus.getInt(LIFE, 200))
+                                    editor.putInt(ATTACK, playerStatus.getInt(ATTACK, 200 + (l*10)))
+                                            .putInt(LIFE, playerStatus.getInt(LIFE, 200 + (l*10)))
                                             .putInt(CHARACTER, playerStatus.getInt(CHARACTER, R.drawable.f005))
                                             .apply();
                                 } else {
@@ -365,14 +386,18 @@ public class Character extends Activity implements View.OnClickListener{
                                 List<String> list =Arrays.asList(array);
                                 if(list.contains("5")) {
 
-                                    textView.setText("攻撃力: " + Gatya.AttackPath[5] + " HP :" + Gatya.HpPath[5]);
-                                    SharedPreferences.Editor editor = playerStatus.edit();
+                                    int l = 0;
+                                    l = playerStatus.getInt("level", 0);
+                                    int goukei = Gatya.AttackPath[5] + (l * 10);
+                                    int goukei2 = Gatya.HpPath[5] + (l * 10);
+
+                                    textView.setText("攻撃力: " + goukei + " HP :" + goukei2);                                    SharedPreferences.Editor editor = playerStatus.edit();
                                     editor.remove(ATTACK);
                                     editor.remove(LIFE);
                                     editor.remove(CHARACTER);
                                     editor.apply();
-                                    editor.putInt(ATTACK, playerStatus.getInt(ATTACK, 120))
-                                            .putInt(LIFE, playerStatus.getInt(LIFE, 120))
+                                    editor.putInt(ATTACK, playerStatus.getInt(ATTACK, 120 + (l*10)))
+                                            .putInt(LIFE, playerStatus.getInt(LIFE, 120 + (l*10)))
                                             .putInt(CHARACTER, playerStatus.getInt(CHARACTER, R.drawable.f101))
                                             .apply();
                                 } else {
@@ -417,14 +442,18 @@ public class Character extends Activity implements View.OnClickListener{
                                 List<String> list =Arrays.asList(array);
                                 if(list.contains("6")) {
 
-                                    textView.setText("攻撃力: " + Gatya.AttackPath[6] + " HP :" + Gatya.HpPath[6]);
-                                    SharedPreferences.Editor editor = playerStatus.edit();
+                                    int l = 0;
+                                    l = playerStatus.getInt("level", 0);
+                                    int goukei = Gatya.AttackPath[6] + (l * 10);
+                                    int goukei2 = Gatya.HpPath[6] + (l * 10);
+
+                                    textView.setText("攻撃力: " + goukei + " HP :" + goukei2);                                    SharedPreferences.Editor editor = playerStatus.edit();
                                     editor.remove(ATTACK);
                                     editor.remove(LIFE);
                                     editor.remove(CHARACTER);
                                     editor.apply();
-                                    editor.putInt(ATTACK, playerStatus.getInt(ATTACK, 150))
-                                            .putInt(LIFE, playerStatus.getInt(LIFE, 130))
+                                    editor.putInt(ATTACK, playerStatus.getInt(ATTACK, 150 +(l*10)))
+                                            .putInt(LIFE, playerStatus.getInt(LIFE, 130 + (l*10)))
                                             .putInt(CHARACTER, playerStatus.getInt(CHARACTER, R.drawable.f102))
                                             .apply();
                                 } else {
@@ -469,14 +498,18 @@ public class Character extends Activity implements View.OnClickListener{
                                 List<String> list =Arrays.asList(array);
                                 if(list.contains("7")) {
 
-                                    textView.setText("攻撃力: " + Gatya.AttackPath[7] + " HP :" + Gatya.HpPath[7]);
-                                    SharedPreferences.Editor editor = playerStatus.edit();
+                                    int l = 0;
+                                    l = playerStatus.getInt("level", 0);
+                                    int goukei = Gatya.AttackPath[7] + (l * 10);
+                                    int goukei2 = Gatya.HpPath[7] + (l * 10);
+
+                                    textView.setText("攻撃力: " + goukei + " HP :" + goukei2);                                    SharedPreferences.Editor editor = playerStatus.edit();
                                     editor.remove(ATTACK);
                                     editor.remove(LIFE);
                                     editor.remove(CHARACTER);
                                     editor.apply();
-                                    editor.putInt(ATTACK, playerStatus.getInt(ATTACK, 170))
-                                            .putInt(LIFE, playerStatus.getInt(LIFE, 170))
+                                    editor.putInt(ATTACK, playerStatus.getInt(ATTACK, 170 + (l*10)))
+                                            .putInt(LIFE, playerStatus.getInt(LIFE, 170 + (l*10)))
                                             .putInt(CHARACTER, playerStatus.getInt(CHARACTER, R.drawable.f103))
                                             .apply();
                                 } else {
@@ -521,14 +554,18 @@ public class Character extends Activity implements View.OnClickListener{
                                 List<String> list =Arrays.asList(array);
                                 if(list.contains("8")) {
 
-                                    textView.setText("攻撃力: " + Gatya.AttackPath[8] + " HP :" + Gatya.HpPath[8]);
-                                    SharedPreferences.Editor editor = playerStatus.edit();
+                                    int l = 0;
+                                    l = playerStatus.getInt("level", 0);
+                                    int goukei = Gatya.AttackPath[8] + (l * 10);
+                                    int goukei2 = Gatya.HpPath[8] + (l * 10);
+
+                                    textView.setText("攻撃力: " + goukei + " HP :" + goukei2);                                    SharedPreferences.Editor editor = playerStatus.edit();
                                     editor.remove(ATTACK);
                                     editor.remove(LIFE);
                                     editor.remove(CHARACTER);
                                     editor.apply();
-                                    editor.putInt(ATTACK, playerStatus.getInt(ATTACK, 170))
-                                            .putInt(LIFE, playerStatus.getInt(LIFE, 150))
+                                    editor.putInt(ATTACK, playerStatus.getInt(ATTACK, 170 +(l*10)))
+                                            .putInt(LIFE, playerStatus.getInt(LIFE, 150 +(l*10)))
                                             .putInt(CHARACTER, playerStatus.getInt(CHARACTER, R.drawable.f104))
                                             .apply();
                                 } else {
@@ -573,14 +610,18 @@ public class Character extends Activity implements View.OnClickListener{
                                 List<String> list =Arrays.asList(array);
                                 if(list.contains("9")) {
 
-                                    textView.setText("攻撃力: " + Gatya.AttackPath[9] + " HP :" + Gatya.HpPath[9]);
-                                    SharedPreferences.Editor editor = playerStatus.edit();
+                                    int l = 0;
+                                    l = playerStatus.getInt("level", 0);
+                                    int goukei = Gatya.AttackPath[9] + (l * 10);
+                                    int goukei2 = Gatya.HpPath[9] + (l * 10);
+
+                                    textView.setText("攻撃力: " + goukei + " HP :" + goukei2);                                    SharedPreferences.Editor editor = playerStatus.edit();
                                     editor.remove(ATTACK);
                                     editor.remove(LIFE);
                                     editor.remove(CHARACTER);
                                     editor.apply();
-                                    editor.putInt(ATTACK, playerStatus.getInt(ATTACK, 250))
-                                            .putInt(LIFE, playerStatus.getInt(LIFE, 200))
+                                    editor.putInt(ATTACK, playerStatus.getInt(ATTACK, 250 +(l*10)))
+                                            .putInt(LIFE, playerStatus.getInt(LIFE, 200 + (l*10)))
                                             .putInt(CHARACTER, playerStatus.getInt(CHARACTER, R.drawable.f105))
                                             .apply();
                                 } else {
@@ -626,14 +667,18 @@ public class Character extends Activity implements View.OnClickListener{
                                 List<String> list =Arrays.asList(array);
                                 if(list.contains("10")) {
 
-                                    textView.setText("攻撃力: " + Gatya.AttackPath[10] + " HP :" + Gatya.HpPath[10]);
-                                    SharedPreferences.Editor editor = playerStatus.edit();
+                                    int l = 0;
+                                    l = playerStatus.getInt("level", 0);
+                                    int goukei = Gatya.AttackPath[10] + (l * 10);
+                                    int goukei2 = Gatya.HpPath[10] + (l * 10);
+
+                                    textView.setText("攻撃力: " + goukei + " HP :" + goukei2);                                    SharedPreferences.Editor editor = playerStatus.edit();
                                     editor.remove(ATTACK);
                                     editor.remove(LIFE);
                                     editor.remove(CHARACTER);
                                     editor.apply();
-                                    editor.putInt(ATTACK, playerStatus.getInt(ATTACK, 110))
-                                            .putInt(LIFE, playerStatus.getInt(LIFE, 100))
+                                    editor.putInt(ATTACK, playerStatus.getInt(ATTACK, 110 + (l*10)))
+                                            .putInt(LIFE, playerStatus.getInt(LIFE, 100 + (l*10)))
                                             .putInt(CHARACTER, playerStatus.getInt(CHARACTER, R.drawable.f301))
                                             .apply();
                                 } else {
@@ -680,14 +725,18 @@ public class Character extends Activity implements View.OnClickListener{
                                 List<String> list =Arrays.asList(array);
                                 if(list.contains("11")) {
 
-                                    textView.setText("攻撃力: " + Gatya.AttackPath[11] + " HP :" + Gatya.HpPath[11]);
-                                    SharedPreferences.Editor editor = playerStatus.edit();
+                                    int l = 0;
+                                    l = playerStatus.getInt("level", 0);
+                                    int goukei = Gatya.AttackPath[11] + (l * 10);
+                                    int goukei2 = Gatya.HpPath[11] + (l * 10);
+
+                                    textView.setText("攻撃力: " + goukei + " HP :" + goukei2);                                    SharedPreferences.Editor editor = playerStatus.edit();
                                     editor.remove(ATTACK);
                                     editor.remove(LIFE);
                                     editor.remove(CHARACTER);
                                     editor.apply();
-                                    editor.putInt(ATTACK, playerStatus.getInt(ATTACK, 100))
-                                            .putInt(LIFE, playerStatus.getInt(LIFE, 120))
+                                    editor.putInt(ATTACK, playerStatus.getInt(ATTACK, 100 + (l*10)))
+                                            .putInt(LIFE, playerStatus.getInt(LIFE, 120 + (l*10)))
                                             .putInt(CHARACTER, playerStatus.getInt(CHARACTER, R.drawable.f302))
                                             .apply();
                                 } else {

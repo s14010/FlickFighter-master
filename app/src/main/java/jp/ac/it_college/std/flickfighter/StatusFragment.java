@@ -1,9 +1,8 @@
 package jp.ac.it_college.std.flickfighter;
 
-import android.app.AlertDialog;
+
 import android.app.FragmentTransaction;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.AudioManager;
@@ -13,10 +12,8 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 public class StatusFragment extends Fragment implements View.OnClickListener {
@@ -65,6 +62,7 @@ public class StatusFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
+        SharedPreferences.Editor editor = playerStatus.edit();
         soundPool.play(buttonClickSoundId, 1.0f, 1.0f, 0, 0, 1.0f);
 
         switch (view.getId()) {
@@ -75,6 +73,9 @@ public class StatusFragment extends Fragment implements View.OnClickListener {
                 ft.commit();
                 break;
             case R.id.button_gatya:
+
+                editor.putInt(POINT, playerStatus.getInt(POINT, 0) + 10000)
+                        .apply();
                 Intent intent1 = new Intent(getActivity(), Gatya.class);
                 startActivity(intent1);
                 break;
@@ -83,12 +84,35 @@ public class StatusFragment extends Fragment implements View.OnClickListener {
                 startActivity(intent2);
                 break;
             case R.id.button2:
+
                 if (100 <= playerStatus.getInt(POINT, 0)) {
 
-                    SharedPreferences.Editor editor = playerStatus.edit();
-                    editor.putInt(POINT, playerStatus.getInt(POINT, 0) - 100)
+                    int level = 0;
+
+                    level = playerStatus.getInt("level1", 0);
+
+                    editor.putInt(POINT, playerStatus.getInt(POINT, 0) - 100 * (level + 1))
+                            .putInt(ATTACK, playerStatus.getInt(ATTACK, 0) + (level * 10))
+                            .putInt(LIFE, playerStatus.getInt(LIFE, 0) + (level * 10))
                             .apply();
+                    level ++;
+                    editor.putInt("level1", level);
+                    editor.apply();
                     pointView.setText(String.valueOf(playerStatus.getInt(POINT, 0)));
+
+                    /*
+                    int level =0;
+
+                    level = playerStatus.getInt("level1", 0);
+                    level ++;
+
+                    editor.putInt(POINT, playerStatus.getInt(POINT, 0) - 100)
+                            .putInt(ATTACK, playerStatus.getInt(ATTACK, 0) + (level * 10))
+                            .putInt(LIFE, playerStatus.getInt(LIFE, 0) + (level * 10))
+                            .putInt("level1", level);
+                    editor.apply();
+                    pointView.setText(String.valueOf(playerStatus.getInt(POINT, 0)));
+                    */
                 }else {
 
                 }
